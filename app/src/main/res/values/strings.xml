@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Own</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="main_video">video</string>
+    <string name="main_music">music</string>
+    <string name="main_books">books</string>
+</resources>

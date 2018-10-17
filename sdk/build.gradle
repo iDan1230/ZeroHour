@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api rootProject.ext.dependencies["kotlin-stdlib-jre7"]
+    api rootProject.ext.dependencies["anko-sdk"]
+    api rootProject.ext.dependencies["anko-appcompat"]
+    api rootProject.ext.dependencies["anko-design"]
+    api rootProject.ext.dependencies["anko-recycler"]
+    api rootProject.ext.dependencies["appcompat_v7"]
+    api rootProject.ext.dependencies["constraint_layout"]
+    api rootProject.ext.dependencies["cardview-v7"]
+    api rootProject.ext.dependencies["recyclerview-v7"]
+    api rootProject.ext.dependencies["design"]
+    //MultiDex分包方法
+    api rootProject.ext.dependencies["multidex"]
+    api rootProject.ext.dependencies["retrofit2"]
+    api rootProject.ext.dependencies["converter-gson"]
+    api rootProject.ext.dependencies["adapter-rxjava2"]
+    api rootProject.ext.dependencies["rxjava2:rxandroid"]
+    api rootProject.ext.dependencies["rxjava2"]
+    api rootProject.ext.dependencies["logger"]
+    api rootProject.ext.dependencies["glide"]
+    api rootProject.ext.dependencies["smartRefreshLayout"]
+    api rootProject.ext.dependencies["banner"]
+    api rootProject.ext.dependencies["eventbus"]
+    api rootProject.ext.dependencies["bugly"]
+    api rootProject.ext.dependencies["rxpermissions"]
+    api rootProject.ext.dependencies["greendao3"]
+    api rootProject.ext.dependencies["jwt"]
+    api rootProject.ext.dependencies["jsoup"]
+    api rootProject.ext.dependencies["wechat"]
+}
