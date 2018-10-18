@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#000000</color>
-    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorPrimary">#e96e0a</color>
+    <color name="colorPrimaryDark">#e96e0a</color>
     <color name="colorAccent">#ffdf40</color>
 
-    <color name="c_main">#000000</color>
-    <color name="c_accent">#ffdf40</color>
+    <color name="c_main">#e96e0a</color>
+    <color name="c_accent">#fff240</color>
     <color name="c_white">#ffffff</color>
+    <color name="c_black">#000000</color>
     <color name="c_tran_white">#99ffffff</color>
     <color name="c_tran_accent">#99ffdf40</color>
     <color name="c_small">#cccccc</color>
     <color name="c_medium">#666666</color>
     <color name="c_max">#333333</color>
-    <color name="c_layout">#f5f5f5</color>
+    <color name="c_layout">#f4e0a3</color>
 
 </resources>

@@ -12,9 +12,13 @@ import java.util.ArrayList
  * 邮箱: zhidan_yang@163.com
  * 备注: 主页页面切换适配器
  */
-class AdapterMainVp(fm: FragmentManager?) : FragmentStatePagerAdapter(fm) {
+class AdapterMainVp : FragmentStatePagerAdapter {
 
     var datas = ArrayList<Fragment>()
+
+    constructor(fm: FragmentManager?, datas: ArrayList<Fragment>) : super(fm) {
+        this.datas.addAll(datas)
+    }
 
     override fun getItem(position: Int): Fragment {
         return datas.get(position)
@@ -25,6 +29,6 @@ class AdapterMainVp(fm: FragmentManager?) : FragmentStatePagerAdapter(fm) {
     }
 
     override fun getCount(): Int {
-        return 3
+        return datas.size
     }
 }

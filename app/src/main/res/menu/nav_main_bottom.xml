@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!--<item-->
+        <!--android:id="@+id/nav_main"-->
+        <!--android:icon="@drawable/ic_bottom_video"-->
+        <!--android:title="@string/main_main"-->
+        <!--/>-->
+
+
     <item
         android:id="@+id/nav_video"
         android:icon="@drawable/ic_bottom_video"
         android:title="@string/main_video" />
-
+    <item
+        android:id="@+id/nav_nba"
+        android:icon="@drawable/ic_bottom_basketball"
+        android:title="@string/main_nba" />
     <item
         android:id="@+id/nav_music"
         android:icon="@drawable/ic_bottom_music"
         android:title="@string/main_music" />
-
     <item
         android:id="@+id/nav_books"
         android:icon="@drawable/ic_bottom_books"

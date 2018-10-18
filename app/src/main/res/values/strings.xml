@@ -5,7 +5,19 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="main_video">video</string>
+    <string name="main_main">main</string>
     <string name="main_music">music</string>
     <string name="main_books">books</string>
+    <string name="main_video">video</string>
+    <string name="main_nba">nba</string>
+
+    <string name="s_pps_title">影音</string>
+    <string name="s_main_title">主页</string>
+    <string name="s_music_title">音乐</string>
+    <string name="s_nba_title">篮球</string>
+    <string name="s_video_title">视频</string>
+    <string name="s_books_title">书架</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

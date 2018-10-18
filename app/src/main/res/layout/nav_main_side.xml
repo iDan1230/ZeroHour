@@ -3,12 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/side_nav_bar"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
         android:id="@+id/ivSideBg"
-        android:layout_width="600dp"
+        android:layout_width="500dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         android:src="@mipmap/img_side_bg"
@@ -63,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/content_margin"
-        android:background="@null"
+        android:background="@drawable/touch_tran"
         android:drawableLeft="@drawable/ic_exit"
         android:text="Exit"
         android:textAllCaps="false"
@@ -75,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/content_margin"
-        android:background="@null"
+        android:background="@drawable/touch_tran"
         android:drawableLeft="@drawable/ic_setting"
         android:text="Setting"
         android:textAllCaps="false"
