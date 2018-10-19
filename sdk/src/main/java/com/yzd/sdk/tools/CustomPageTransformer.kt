@@ -2,7 +2,6 @@ package com.yzd.sdk.tools
 
 import android.annotation.SuppressLint
 import android.support.v4.view.ViewPager
-import android.util.Log
 import android.view.View
 
 /**
@@ -12,36 +11,38 @@ import android.view.View
  * 备注: ViewPager样式
  */
 class CustomPageTransformer : ViewPager.PageTransformer {
-    val MIN_SCALE_X = 0.8f
-    val MIN_SCALE_Y = 0.8f
-    val MIN_ALPHA = 0.8f
+    val MIN_SCALE_X = 0.95f
+    val MIN_SCALE_Y = 0.95f
+    val MIN_ALPHA = 0.95f
     var pageWidth: Int = 0
+    var translationZ = 10f
+    var stand_out_space = 0.3f
 
     @SuppressLint("NewApi")
     override fun transformPage(page: View, position: Float) {
-        Log.e("page", position.toString())
-
         if (position == 0f) {
             pageWidth = page.width
             page.scaleX = 1f
             page.scaleY = 1f
             page.alpha = 1f
-            page.translationZ = 3f
-            page.elevation = 3f
-            page.setTranslationX(0f)
+            page.translationX = 0f
+            page.translationZ = translationZ
         } else {
             val scaleFactorX = MIN_SCALE_X + (1 - MIN_SCALE_X) * (1 - Math.abs(position))
             val scaleFactorY = MIN_SCALE_Y + (1 - MIN_SCALE_Y) * (1 - Math.abs(position))
             val alphaFactor = MIN_ALPHA + (1 - MIN_ALPHA) * (1 - Math.abs(position))
-            page.setScaleX(scaleFactorX)
-            page.setScaleY(scaleFactorY)
-            page.setAlpha(alphaFactor)
-
-            if (position >0) {
-                page.setTranslationX((-1 * Math.abs(pageWidth * position) / 2).toFloat())
+            page.scaleX = scaleFactorX
+            page.scaleY = scaleFactorY
+//            page.alpha = alphaFactor
+            // 为了体现出层次感，卡片式特色
+            page.translationZ = translationZ - Math.abs(position)
+            if (position > 0) {
+                //移动到和显示也重叠的位置加上Stan out
+                page.translationX = -1 * Math.abs(pageWidth * position) + position * pageWidth * stand_out_space
             }
             if (position <= 0) {
-                page.setTranslationX((Math.abs(pageWidth * position) / 2).toFloat())
+                //posision为负值
+                page.translationX = Math.abs(pageWidth * position) + position * pageWidth * stand_out_space
             }
         }
 

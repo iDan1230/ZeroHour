@@ -2,11 +2,13 @@ package com.yzd.own.adapter
 
 import android.content.Context
 import android.support.v4.view.PagerAdapter
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.TextView
 import com.yzd.own.R
+import org.jetbrains.anko.onClick
 
 /**
  * 作者: 杨智丹
@@ -14,7 +16,7 @@ import com.yzd.own.R
  * 邮箱: zhidan_yang@163.com
  * 备注: 热映视频的适配器
  */
-class AdapterHotVideo : PagerAdapter {
+class AdapterHotMovie : PagerAdapter {
 
     private var mContext: Context? = null
 
@@ -34,7 +36,12 @@ class AdapterHotVideo : PagerAdapter {
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         if (position >= views.size)
         {
-            var view = LayoutInflater.from(mContext).inflate(R.layout.item_hot_video,null)
+            var view = LayoutInflater.from(mContext).inflate(R.layout.item_vp_movie,null)
+            var tvContent = view.findViewById<TextView>(R.id.tv_content)
+            tvContent.text = position.toString()
+            view.onClick {
+                Log.e("vp",position.toString())
+            }
             views.add(view)
             container.addView(view)
         }

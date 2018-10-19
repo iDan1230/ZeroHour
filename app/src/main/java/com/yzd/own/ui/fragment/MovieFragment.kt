@@ -1,13 +1,15 @@
 package com.yzd.own.ui.fragment
 
 import android.support.v4.view.ViewPager
+import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.View
 import com.yzd.own.R
-import com.yzd.own.adapter.AdapterHotVideo
+import com.yzd.own.adapter.AdapterHotMovie
+import com.yzd.own.adapter.AdapterMovie
 import com.yzd.sdk.base.BaseFragment
-import com.yzd.sdk.tools.CustomPageTransformer
-import kotlinx.android.synthetic.main.fragment_video.view.*
+
+import kotlinx.android.synthetic.main.fragment_movie.view.*
 
 
 /**
@@ -16,18 +18,19 @@ import kotlinx.android.synthetic.main.fragment_video.view.*
  * 邮箱: zhidan_yang@163.com
  * 备注: 视频
  */
-class VideoFragment : BaseFragment(), ViewPager.OnPageChangeListener {
+class MovieFragment : BaseFragment(), ViewPager.OnPageChangeListener {
 
     var listener: OnMenuListener? = null
 
-    var hotVideo: AdapterHotVideo? = null
+    var topMovie: AdapterMovie? = null
+
     override fun layoutId(): Int {
-        return R.layout.fragment_video
+        return R.layout.fragment_movie
     }
 
     override fun initTitle(rootView: View?) {
         rootView!!.toolbar.setNavigationOnClickListener {
-            listener?.menuListener()
+            listener!!.menuListener()
         }
     }
 
@@ -37,11 +40,9 @@ class VideoFragment : BaseFragment(), ViewPager.OnPageChangeListener {
         for (i in 0..10) {
             datas.add(i.toString() + "item")
         }
-        hotVideo = AdapterHotVideo(context!!, datas)
-        rootView!!.vpHotVideo.adapter = hotVideo
-        rootView!!.vpHotVideo.addOnPageChangeListener(this)
-        rootView!!.vpHotVideo.offscreenPageLimit = 7
-        rootView!!.vpHotVideo.setPageTransformer(false, CustomPageTransformer())
+        topMovie = AdapterMovie(datas, context!!)
+        rootView!!.recycler.layoutManager = LinearLayoutManager(context)
+        rootView!!.recycler.adapter = topMovie
     }
 
     override fun onPageSelected(position: Int) {

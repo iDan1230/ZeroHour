@@ -28,7 +28,7 @@ import java.util.ArrayList
  * 邮箱: zhidan_yang@163.com
  * 备注: 主页面
  */
-class MainActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelectedListener, ViewPager.OnPageChangeListener, VideoFragment.OnMenuListener {
+class MainActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelectedListener, ViewPager.OnPageChangeListener, MovieFragment.OnMenuListener {
 
     var menuItem: MenuItem? = null
 
@@ -55,7 +55,7 @@ class MainActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelect
      */
     private fun setVpData() {
         var datas = ArrayList<Fragment>()
-        var videoFragment = VideoFragment()
+        var videoFragment = MovieFragment()
         videoFragment.listener = this
         datas.add(videoFragment)
         datas.add(NBAFragment())
@@ -84,7 +84,7 @@ class MainActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelect
      */
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_video -> {
+            R.id.nav_movie -> {
                 vpContent.currentItem = 0
             }
             R.id.nav_nba -> {
