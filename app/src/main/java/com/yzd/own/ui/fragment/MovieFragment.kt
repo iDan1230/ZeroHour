@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_movie.view.*
  * 邮箱: zhidan_yang@163.com
  * 备注: 视频
  */
-class MovieFragment : BaseFragment(), ViewPager.OnPageChangeListener {
+class MovieFragment : BaseFragment(){
 
     var listener: OnMenuListener? = null
 
@@ -44,17 +44,6 @@ class MovieFragment : BaseFragment(), ViewPager.OnPageChangeListener {
         rootView!!.recycler.layoutManager = LinearLayoutManager(context)
         rootView!!.recycler.adapter = topMovie
     }
-
-    override fun onPageSelected(position: Int) {
-        Log.e("TAG", position.toString())
-    }
-
-    override fun onPageScrollStateChanged(state: Int) {
-    }
-
-    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-    }
-
 
     interface OnMenuListener {
         fun menuListener()

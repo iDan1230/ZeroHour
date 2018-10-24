@@ -9,7 +9,7 @@
     android:layout_marginTop="@dimen/dp_10"
     android:background="@drawable/touch_white"
     android:elevation="@dimen/dp_5"
-    android:padding="@dimen/dp_5"
+    android:padding="@dimen/dp_10"
     android:translationZ="@dimen/dp_5">
 
     <ImageView
@@ -27,8 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_5"
         android:text="凯尔特人"
-        android:textColor="@color/c_main"
-        android:textSize="16sp"
+        android:textColor="@color/c_999999"
+        android:textSize="14sp"
         app:layout_constraintLeft_toLeftOf="@id/iv_guest_logo"
         app:layout_constraintRight_toRightOf="@id/iv_guest_logo"
         app:layout_constraintTop_toBottomOf="@id/iv_guest_logo" />
@@ -38,20 +38,22 @@
         android:id="@+id/tv_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="直播中"
-        android:textColor="@color/c_main"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="VS"
+        android:textColor="@color/c_red"
+        android:textSize="18sp"
+        android:textStyle="italic|bold"
+        app:layout_constraintBottom_toTopOf="@id/tv_type"
         app:layout_constraintLeft_toRightOf="@id/iv_guest_logo"
         app:layout_constraintRight_toLeftOf="@+id/iv_home_logo"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tv_source" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="101"
-        android:textColor="@color/c_main"
-        android:textSize="16sp"
+        android:textColor="@color/c_red"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="@id/tv_status"
         app:layout_constraintLeft_toRightOf="@id/iv_guest_logo"
         app:layout_constraintRight_toLeftOf="@+id/tv_status"
@@ -61,8 +63,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="102"
-        android:textColor="@color/c_main"
-        android:textSize="16sp"
+        android:textColor="@color/c_red"
+        android:textSize="18sp"
+        android:textStyle="italic|bold"
         app:layout_constraintBottom_toBottomOf="@id/tv_status"
         app:layout_constraintLeft_toRightOf="@id/tv_status"
         app:layout_constraintRight_toLeftOf="@+id/iv_home_logo"
@@ -70,11 +73,12 @@
 
 
     <TextView
+        android:id="@+id/tv_source"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NBA中文网"
-        android:textColor="@color/c_main"
-        android:textSize="15sp"
+        android:textColor="@color/c_max"
+        android:textSize="17sp"
         app:layout_constraintLeft_toRightOf="@id/iv_guest_logo"
         app:layout_constraintRight_toLeftOf="@+id/iv_home_logo"
         app:layout_constraintTop_toTopOf="parent"
@@ -82,20 +86,22 @@
         />
 
     <TextView
+        android:id="@+id/tv_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="常规赛"
-        android:textColor="@color/c_main"
-        android:textSize="15sp"
+        android:text="第四节 09:16"
+        android:textColor="@color/c_red"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/iv_guest_logo"
         app:layout_constraintRight_toLeftOf="@+id/iv_home_logo" />
+
 
     <ImageView
         android:id="@+id/iv_home_logo"
         android:layout_width="@dimen/dp_70"
         android:layout_height="@dimen/dp_70"
-        android:src="@drawable/ic_default_logo"
+        android:src="@drawable/ic_test_default"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/iv_guest_logo" />
 
@@ -103,8 +109,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="湖人"
-        android:textColor="@color/c_main"
-        android:textSize="16sp"
+        android:textColor="@color/c_999999"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/tv_guest_name"
         app:layout_constraintLeft_toLeftOf="@id/iv_home_logo"
         app:layout_constraintRight_toRightOf="@id/iv_home_logo"

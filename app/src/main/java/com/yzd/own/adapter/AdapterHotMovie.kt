@@ -24,21 +24,25 @@ class AdapterHotMovie : PagerAdapter {
 
     private var views = ArrayList<View>()
 
+
     constructor(context: Context, datas: ArrayList<String>) {
         this.mContext = context
         this.datas.addAll(datas)
+//        this.datas.forEach {
+//            views.add(LayoutInflater.from(mContext).inflate(R.layout.item_vp_movie, null))
+//        }
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
 //        super.destroyItem(container, position, `object`)
+//        container.removeViewAt(position)
     }
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        if (position >= views.size)
-        {
+        if (position >= views.size) {
             var view = LayoutInflater.from(mContext).inflate(R.layout.item_vp_movie,null)
             var tvContent = view.findViewById<TextView>(R.id.tv_content)
-            tvContent.text = position.toString()
+            tvContent.text ="推荐${position.toString()}"
             view.onClick {
                 Log.e("vp",position.toString())
             }
@@ -46,7 +50,9 @@ class AdapterHotMovie : PagerAdapter {
             container.addView(view)
         }
         return views.get(position)
+
     }
+
 
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
         return view == `object`

@@ -11,8 +11,10 @@
     <color name="c_tran_white">#99ffffff</color>
     <color name="c_tran_accent">#99ffdf40</color>
     <color name="c_small">#cccccc</color>
+    <color name="c_999999">#999999</color>
     <color name="c_medium">#666666</color>
     <color name="c_max">#333333</color>
     <color name="c_layout">#f4e0a3</color>
+    <color name="c_red">#f40</color>
 
 </resources>

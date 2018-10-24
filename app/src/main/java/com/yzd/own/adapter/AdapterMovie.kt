@@ -55,15 +55,33 @@ class AdapterMovie(var datas: ArrayList<String>, var mContext: Context) : Recycl
     }
 
     var hotMovie: AdapterHotMovie? = null
+    var currentItemPosition = 0
     private fun onHotBind(hotHolder: HotHolder, position: Int) {
         var datas = ArrayList<String>()
         for (i in 0..10) {
-            datas.add(i.toString() + "item")
+            datas.add(i.toString() + "item$position")
         }
-        hotMovie = AdapterHotMovie(mContext!!, datas)
-        hotHolder!!.vpHotVideo.adapter = hotMovie
-        hotHolder!!.vpHotVideo.offscreenPageLimit = 5
-        hotHolder!!.vpHotVideo.setPageTransformer(false, CustomPageTransformer())
+        if (null == hotMovie) {
+            hotMovie = AdapterHotMovie(mContext, datas)
+            hotHolder.vpHotVideo.adapter = hotMovie
+            hotHolder.vpHotVideo.offscreenPageLimit = 5
+            hotHolder.vpHotVideo.setPageTransformer(false, CustomPageTransformer())
+        }
+//        hotHolder!!.vpHotVideo.currentItem = currentItemPosition
+
+
+        hotHolder.vpHotVideo.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrollStateChanged(state: Int) {
+            }
+
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+            }
+
+            override fun onPageSelected(position: Int) {
+                currentItemPosition = position;
+            }
+
+        })
     }
 
 

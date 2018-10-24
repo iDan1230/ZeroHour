@@ -33,7 +33,7 @@ class CustomPageTransformer : ViewPager.PageTransformer {
             val alphaFactor = MIN_ALPHA + (1 - MIN_ALPHA) * (1 - Math.abs(position))
             page.scaleX = scaleFactorX
             page.scaleY = scaleFactorY
-//            page.alpha = alphaFactor
+            page.alpha = MIN_ALPHA
             // 为了体现出层次感，卡片式特色
             page.translationZ = translationZ - Math.abs(position)
             if (position > 0) {
